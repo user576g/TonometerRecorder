@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Tonometer Recorder</string>
+    <string name="add_btn_text">Добавить показания</string>
+
+    <string name="sys_text">Верхнее давление:</string>
+    <string name="dia_text">Нижнее давление:</string>
+    <string name="pulse_text">Пульс:</string>
+
+    <string name="sys_hint">123</string>
+    <string name="dia_hint">62</string>
+    <string name="pulse_hint">57</string>
+
+    <string name="save">Добавить</string>
+
+    <string name="add_header">Добавление записи</string>
+
+    <string name="th_date">Дата</string>
+    <string name="th_sys">Верхнее давление</string>
+    <string name="th_dia">Нижнее давление</string>
+    <string name="th_pulse">Пульс</string>
+
+</resources>
