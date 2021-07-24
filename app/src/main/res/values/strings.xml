@@ -19,4 +19,6 @@
     <string name="th_dia">Нижнее давление</string>
     <string name="th_pulse">Пульс</string>
 
+    <string name="message">Нет ни одной записи.\n Добавьте новую запись!</string>
+
 </resources>

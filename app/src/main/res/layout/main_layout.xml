@@ -13,26 +13,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TableRow android:background="@drawable/border">
+        <TableRow
+            android:background="@drawable/border">
 
             <TextView
                 android:background="@drawable/border"
                 android:padding="@dimen/cell_padding"
-                android:text="@string/th_date" />
+                android:text="@string/th_date"
+                android:textAlignment="center" />
 
             <TextView
                 android:background="@drawable/border"
                 android:padding="@dimen/cell_padding"
-                android:text="@string/th_sys" />
+                android:text="@string/th_sys"
+                android:textAlignment="center"/>
 
             <TextView
                 android:background="@drawable/border"
                 android:padding="@dimen/cell_padding"
-                android:text="@string/th_dia" />
+                android:text="@string/th_dia"
+                android:textAlignment="center" />
 
             <TextView
                 android:padding="@dimen/cell_padding"
-                android:text="@string/th_pulse" />
+                android:text="@string/th_pulse"
+                android:textAlignment="center" />
         </TableRow>
     </TableLayout>
 
