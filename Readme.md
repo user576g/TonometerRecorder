@@ -30,3 +30,9 @@ minSdkVersion - 23
 # Download
 
 Если у Вас нет желания собирать приложение в Андроид Студии, Вы можете [скачать собранный apk файл](https://github.com/user576g/TonometerRecorder/releases/download/0.0.0/app-release.apk)
+
+# TODOs
+
+Нет возможности просколить вниз. Возможно, это будет решено, если от Table Layout перейти к List Fragment.
+
+Плохая адаптация к разным размерам экрана.
