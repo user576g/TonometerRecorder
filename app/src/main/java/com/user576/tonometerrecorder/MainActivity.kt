@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(
                 Intent(this, AddRecordActivity::class.java)
             )
+            finish()
         }
 
         RecorderApp.appContext = this.applicationContext

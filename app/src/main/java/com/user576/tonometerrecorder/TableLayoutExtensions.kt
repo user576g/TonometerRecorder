@@ -8,6 +8,17 @@ import androidx.core.view.setPadding
 import java.util.Calendar
 import java.util.Locale
 
+// Calendar.Builder added in API level 26
+private fun createCalendar(timeStamp : Long) : Calendar =
+    if (android.os.Build.VERSION_CODES.O <= android.os.Build.VERSION.SDK_INT) {
+        Calendar.Builder().setInstant(timeStamp).build()
+    } else {
+        val calendar = Calendar.getInstance()
+        calendar.timeInMillis = timeStamp
+        calendar
+    }
+
+
 private fun TableLayout.createTextViewWithText(text : CharSequence) : TextView {
     val textView = TextView(this.context)
     textView.setPadding(
@@ -27,7 +38,7 @@ fun TableLayout.addRecord(record: Record) {
     val row = TableRow(this.context)
     row.setBackgroundResource(R.drawable.border)
 
-    val cal = Calendar.Builder().setInstant(record.timeMillis).build()
+    val cal = createCalendar(record.timeMillis)
     val month = cal.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale("ru"))
     val day = cal.get(Calendar.DAY_OF_MONTH)
 

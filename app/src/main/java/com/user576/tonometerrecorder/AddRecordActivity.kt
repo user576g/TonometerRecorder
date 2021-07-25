@@ -1,5 +1,6 @@
 package com.user576.tonometerrecorder
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +9,6 @@ import kotlinx.android.synthetic.main.add_layout.add_btn
 import kotlinx.android.synthetic.main.add_layout.sys
 import kotlinx.android.synthetic.main.add_layout.dia
 import kotlinx.android.synthetic.main.add_layout.pulse
-import kotlinx.android.synthetic.main.main_layout.table_layout
 
 class AddRecordActivity : AppCompatActivity() {
 
@@ -26,7 +26,9 @@ class AddRecordActivity : AppCompatActivity() {
             if (result == Record.VALID_RES) {
                 val record = Record.create(sysStr, diaStr, pulseStr)
                 RecorderApp.dao.insert(record)
-                table_layout.addRecord(record)
+                startActivity(
+                    Intent(this, MainActivity::class.java)
+                )
                 finish()
             } else {
                 AlertDialog.Builder(it.context)
