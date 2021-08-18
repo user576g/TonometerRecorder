@@ -8,12 +8,10 @@ import com.user576.tonometerrecorder.databinding.MainLayoutBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding : MainLayoutBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = MainLayoutBinding.inflate(layoutInflater)
+        val binding = MainLayoutBinding.inflate(layoutInflater)
 
         with (binding.header){
             date.text = resources.getString(R.string.th_date)
@@ -25,16 +23,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         RecorderApp.appContext = this.applicationContext
-/*
-        table_layout.setRecords(
+
+        binding.recyclerView.adapter = RecordAdapter(
             RecorderApp.dao.getAll()
         )
-*/
-    }
-
-    override fun onDestroy() {
-        resetRowsNumber()
-        super.onDestroy()
     }
 
     fun onBtnClick(view : View) {
@@ -42,7 +34,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(
                 Intent(this, AddRecordActivity::class.java)
             )
-            finish()
         }
     }
 }
