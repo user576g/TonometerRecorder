@@ -2,10 +2,9 @@ package com.user576.tonometerrecorder
 
 import android.R.layout
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
 import androidx.fragment.app.ListFragment
-import kotlinx.coroutines.async
-import kotlinx.coroutines.runBlocking
 
 
 class MyListFragment : ListFragment() {
@@ -13,8 +12,8 @@ class MyListFragment : ListFragment() {
         lateinit var adapter: ArrayAdapter<String>
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val records = RecorderApp.dao.getAll()
 
