@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'kotlin-android-extensions'
 }
 
 apply plugin: 'kotlin-kapt'
@@ -32,6 +31,10 @@ android {
         debug {
             signingConfig signingConfigs.debug
         }
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 }
 

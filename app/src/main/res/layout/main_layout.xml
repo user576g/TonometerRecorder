@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,47 +8,27 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TableLayout
-        android:id="@+id/table_layout"
+    <include
+        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        layout="@layout/list_item"/>
 
-        <TableRow
-            android:background="@drawable/border">
-
-            <TextView
-                android:background="@drawable/border"
-                android:padding="@dimen/cell_padding"
-                android:text="@string/th_date"
-                android:textAlignment="center" />
-
-            <TextView
-                android:background="@drawable/border"
-                android:padding="@dimen/cell_padding"
-                android:text="@string/th_sys"
-                android:textAlignment="center"/>
-
-            <TextView
-                android:background="@drawable/border"
-                android:padding="@dimen/cell_padding"
-                android:text="@string/th_dia"
-                android:textAlignment="center" />
-
-            <TextView
-                android:padding="@dimen/cell_padding"
-                android:text="@string/th_pulse"
-                android:textAlignment="center" />
-        </TableRow>
-    </TableLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_record_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:srcCompat="@android:drawable/ic_input_add"
+        android:layout_margin="@dimen/add_btn_margin"
         android:contentDescription="@string/add_btn_text"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        />
-</RelativeLayout>
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:onClick="onBtnClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
