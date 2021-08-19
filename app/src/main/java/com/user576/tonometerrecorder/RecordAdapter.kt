@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import java.util.Calendar
 import java.util.Locale
 
+internal lateinit var recordAdapter : RecordAdapter
+
 // Calendar.Builder added in API level 26
 private fun createCalendar(timeStamp : Long) : Calendar =
     if (android.os.Build.VERSION_CODES.O <= android.os.Build.VERSION.SDK_INT) {
@@ -18,9 +20,9 @@ private fun createCalendar(timeStamp : Long) : Calendar =
         calendar
     }
 
-class RecordAdapter(
-    private val records : List<Record>
-    ) : RecyclerView.Adapter<RecordAdapter.RecordViewHolder>() {
+class RecordAdapter(records : List<Record>) : RecyclerView.Adapter<RecordAdapter.RecordViewHolder>() {
+
+    private val _records = ArrayList(records)
 
     class RecordViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         val tvDate : TextView = view.findViewById(R.id.date)
@@ -38,7 +40,7 @@ class RecordAdapter(
 
     override fun onBindViewHolder(holder: RecordViewHolder, position: Int) {
 
-        val record = records[position]
+        val record = _records[position]
 
         val cal = createCalendar(record.timeMillis)
         val month = cal.getDisplayName(Calendar.MONTH, Calendar.SHORT, Locale("ru"))
@@ -52,5 +54,10 @@ class RecordAdapter(
         }
     }
 
-    override fun getItemCount(): Int = records.size
+    override fun getItemCount(): Int = _records.size
+
+    fun addRecord(record: Record) {
+        _records.add(record)
+        notifyItemInserted(_records.size - 1)
+    }
 }

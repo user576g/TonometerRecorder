@@ -1,6 +1,5 @@
 package com.user576.tonometerrecorder
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
@@ -35,9 +34,7 @@ class AddRecordActivity : AppCompatActivity() {
         if (result == Record.VALID_RES) {
             val record = Record.create(sysStr, diaStr, pulseStr)
             RecorderApp.dao.insert(record)
-            startActivity(
-                Intent(this, MainActivity::class.java)
-            )
+            recordAdapter.addRecord(record)
             finish()
         } else {
             AlertDialog.Builder(view.context)
