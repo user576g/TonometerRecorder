@@ -25,10 +25,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         RecorderApp.appContext = this.applicationContext
-    }
-
-    override fun onStart() {
-        super.onStart()
 
         recordAdapter = RecordAdapter(
             RecorderApp.dao.getAll()
