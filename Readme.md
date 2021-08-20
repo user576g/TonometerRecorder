@@ -43,4 +43,5 @@ minSdkVersion - 23
 
 # TODOs
 
-DrawerLayout
+1) DrawerLayout
+2) Night mode
