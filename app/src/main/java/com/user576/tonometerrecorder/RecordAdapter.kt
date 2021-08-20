@@ -35,6 +35,12 @@ class RecordAdapter(records : List<Record>) : RecyclerView.Adapter<RecordAdapter
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.list_item, viewGroup, false)
 
+        if (viewType == 1) {
+            listOf(R.id.date, R.id.sys, R.id.dia, R.id.pulse).forEach {
+                view.findViewById<TextView>(it).setBackgroundResource(R.drawable.border_green)
+            }
+        }
+
         return RecordViewHolder(view)
     }
 
@@ -60,4 +66,6 @@ class RecordAdapter(records : List<Record>) : RecyclerView.Adapter<RecordAdapter
         _records.add(record)
         notifyItemInserted(_records.size - 1)
     }
+
+    override fun getItemViewType(position: Int): Int = position % 2
 }
