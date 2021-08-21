@@ -30,8 +30,7 @@ minSdkVersion - 23
 
 Перед / после внедрения поддержки ночного режима
 
-![](./screenshots/before.png)
-![](./screenshots/after.png)
+![](./screenshots/before.png) ![](./screenshots/after.png)
 
 # Screenshots
 
