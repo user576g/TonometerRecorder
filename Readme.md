@@ -5,6 +5,7 @@
 Приложение содержит: 
 
 1) RecyclerView with two view types
+2) Night mode support
 
 Приложение хранит данные на устройстве при помощи Андроид библиотеки Rooom.
 
@@ -25,6 +26,13 @@ Android version - 6.0
 
 minSdkVersion - 23
 
+# Night mode
+
+Перед / после внедрения поддержки ночного режима
+
+![](./screenshots/before.png)
+![](./screenshots/after.png)
+
 # Screenshots
 
 ![](./screenshots/1.jpg)
@@ -44,4 +52,4 @@ minSdkVersion - 23
 # TODOs
 
 1) DrawerLayout
-2) Night mode
+2) Add day night mode switcher
