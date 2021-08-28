@@ -12,7 +12,7 @@ interface RecordDao {
     fun insert(record: Record)
 }
 
-@Database(entities = arrayOf(Record::class), version = 1)
+@Database(entities = arrayOf(Record::class), version = 1, exportSchema = false)
 abstract class RecordsDB : RoomDatabase() {
     abstract fun recordDao(): RecordDao
 
