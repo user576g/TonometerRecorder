@@ -20,5 +20,5 @@
     <string name="th_pulse">Пульс</string>
 
     <string name="message">Нет ни одной записи.\n Добавьте новую запись!</string>
-
+    <string name="common_view">The_common_view</string>
 </resources>

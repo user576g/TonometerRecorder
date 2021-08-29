@@ -30,8 +30,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/add_btn_margin"
         android:contentDescription="@string/add_btn_text"
+        android:backgroundTint="@color/design_default_color_secondary"
         app:srcCompat="@android:drawable/ic_input_add"
         android:onClick="onBtnClick"
+        android:transitionName="@string/common_view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
