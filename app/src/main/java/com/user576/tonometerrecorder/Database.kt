@@ -12,7 +12,7 @@ interface RecordDao {
     fun insert(record: Record)
 }
 
-@Database(entities = arrayOf(Record::class), version = 1, exportSchema = false)
+@Database(entities = [Record::class], version = 1, exportSchema = false)
 abstract class RecordsDB : RoomDatabase() {
     abstract fun recordDao(): RecordDao
 
@@ -31,8 +31,8 @@ abstract class RecordsDB : RoomDatabase() {
                     context.applicationContext,
                     RecordsDB::class.java,
                     "tonometer-records"
-                ).allowMainThreadQueries()
-                    .build()
+                ).build()
+
                 INSTANCE = instance
                 // return instance
                 instance

@@ -7,6 +7,10 @@ import android.util.Pair
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.user576.tonometerrecorder.databinding.MainLayoutBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,10 +32,14 @@ class MainActivity : AppCompatActivity() {
 
         RecorderApp.appContext = this.applicationContext
 
-        recordAdapter = RecordAdapter(
-            RecorderApp.dao.getAll()
-        )
-        binding.recyclerView.adapter = recordAdapter
+        CoroutineScope(Dispatchers.IO).launch {
+            recordAdapter = RecordAdapter(
+                RecorderApp.dao.getAll()
+            )
+            withContext(Dispatchers.Main) {
+                binding.recyclerView.adapter = recordAdapter
+            }
+        }
     }
 
     fun onBtnClick(view : View) {
