@@ -3,6 +3,7 @@
     package="com.user576.tonometerrecorder">
 
     <application
+        android:name=".RecorderApp"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

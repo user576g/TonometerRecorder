@@ -38,7 +38,7 @@ class AddRecordActivity : AppCompatActivity() {
             val record = Record.create(sysStr, diaStr, pulseStr)
 
             CoroutineScope(Dispatchers.IO).launch {
-                RecorderApp.dao.insert(record)
+                RecorderApp.dao?.insert(record)
             }
 
             recordAdapter.addRecord(record)

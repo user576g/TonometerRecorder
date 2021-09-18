@@ -1,11 +1,17 @@
 package com.user576.tonometerrecorder
 
-import android.content.Context
+import android.app.Application
 
-object RecorderApp {
-    lateinit var appContext : Context
+class RecorderApp : Application() {
 
-    private val db by lazy { RecordsDB.getDatabase(appContext) }
+    override fun onCreate() {
+        super.onCreate()
 
-    val dao by lazy { db.recordDao() }
+        val db = RecordsDB.getDatabase(applicationContext)
+        dao = db.recordDao()
+    }
+
+    companion object {
+        var dao : RecordDao? = null
+    }
 }

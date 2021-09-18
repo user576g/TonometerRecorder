@@ -30,12 +30,11 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        RecorderApp.appContext = this.applicationContext
-
         CoroutineScope(Dispatchers.IO).launch {
-            recordAdapter = RecordAdapter(
-                RecorderApp.dao.getAll()
-            )
+
+            val records = RecorderApp.dao?.getAll() ?: emptyList()
+            recordAdapter = RecordAdapter(records)
+
             withContext(Dispatchers.Main) {
                 binding.recyclerView.adapter = recordAdapter
             }
