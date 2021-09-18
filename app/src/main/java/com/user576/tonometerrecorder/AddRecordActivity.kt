@@ -5,9 +5,6 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.user576.tonometerrecorder.databinding.AddLayoutBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class AddRecordActivity : AppCompatActivity() {
 
@@ -20,6 +17,8 @@ class AddRecordActivity : AppCompatActivity() {
 
         setContentView(binding.root)
     }
+
+    private val saver = SaveRecordUseCase()
 
     fun onBtnClick(view : View) {
 
@@ -36,11 +35,7 @@ class AddRecordActivity : AppCompatActivity() {
         val result = Record.verifyParamsForCreate(sysStr, diaStr, pulseStr)
         if (result == Record.VALID_RES) {
             val record = Record.create(sysStr, diaStr, pulseStr)
-
-            CoroutineScope(Dispatchers.IO).launch {
-                RecorderApp.dao?.insert(record)
-            }
-
+            saver.save(record)
             finish()
         } else {
             AlertDialog.Builder(view.context)
