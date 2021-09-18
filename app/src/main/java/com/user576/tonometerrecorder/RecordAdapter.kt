@@ -51,7 +51,7 @@ class RecordAdapter(records : List<Record>) : RecyclerView.Adapter<RecordAdapter
         val day = cal.get(Calendar.DAY_OF_MONTH)
 
         with(holder) {
-            tvDate.text = String.format("%d %s", day, month)
+            tvDate.text = String.format(DATE_TEMPLATE, day, month)
             tvSys.text = record.sys.toString()
             tvDia.text = record.dia.toString()
             tvPulse.text = record.pulse.toString()
@@ -61,4 +61,8 @@ class RecordAdapter(records : List<Record>) : RecyclerView.Adapter<RecordAdapter
     override fun getItemCount(): Int = _records.size
 
     override fun getItemViewType(position: Int): Int = position % 2
+
+    companion object {
+        private const val DATE_TEMPLATE = "%d %s"
+    }
 }

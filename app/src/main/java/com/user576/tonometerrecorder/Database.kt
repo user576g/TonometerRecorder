@@ -15,8 +15,8 @@ interface RecordDao {
 
 @Database(entities = [Record::class], version = 1, exportSchema = false)
 abstract class RecordsDB : RoomDatabase() {
-    abstract fun recordDao(): RecordDao
 
+    abstract fun recordDao(): RecordDao
 
     companion object {
         // Singleton prevents multiple instances of database opening at the
