@@ -1,12 +1,13 @@
 package com.user576.tonometerrecorder
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
 interface RecordDao {
     @Query("SELECT * FROM record")
-    fun getAll() : List<Record>
+    fun getAll() : LiveData<List<Record>>
 
     @Insert
     fun insert(record: Record)

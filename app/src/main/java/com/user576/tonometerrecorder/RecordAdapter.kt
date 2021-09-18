@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import java.util.Calendar
 import java.util.Locale
 
-internal lateinit var recordAdapter : RecordAdapter
-
 // Calendar.Builder added in API level 26
 private fun createCalendar(timeStamp : Long) : Calendar =
     if (android.os.Build.VERSION_CODES.O <= android.os.Build.VERSION.SDK_INT) {
@@ -61,11 +59,6 @@ class RecordAdapter(records : List<Record>) : RecyclerView.Adapter<RecordAdapter
     }
 
     override fun getItemCount(): Int = _records.size
-
-    fun addRecord(record: Record) {
-        _records.add(record)
-        notifyItemInserted(_records.size - 1)
-    }
 
     override fun getItemViewType(position: Int): Int = position % 2
 }

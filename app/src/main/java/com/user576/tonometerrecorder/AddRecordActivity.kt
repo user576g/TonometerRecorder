@@ -41,7 +41,6 @@ class AddRecordActivity : AppCompatActivity() {
                 RecorderApp.dao?.insert(record)
             }
 
-            recordAdapter.addRecord(record)
             finish()
         } else {
             AlertDialog.Builder(view.context)
