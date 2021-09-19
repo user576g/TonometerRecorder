@@ -9,6 +9,7 @@
 3) Transition animation
 4) Picasso for image loading
 5) Hilt for DI
+6) DrawerLayout
 
 Приложение хранит данные на устройстве при помощи Андроид библиотеки Rooom.
 
@@ -53,5 +54,4 @@ minSdkVersion - 23
 
 # TODOs
 
-1) DrawerLayout item in toolbar
-2) Add day night mode switcher
+1) Add day night mode switcher
