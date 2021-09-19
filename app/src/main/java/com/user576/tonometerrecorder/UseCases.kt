@@ -32,7 +32,7 @@ class SaveRecordUseCase @Inject constructor() : UseCase() {
     }
 }
 
-class GetObservableRecordsUseCase @Inject constructor() : UseCase() {
+class GetObservableRecordsUseCase : UseCase() {
 
     fun get() : LiveData<List<Record>> = recordDao.getAll()
 }
