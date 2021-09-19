@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.user576.tonometerrecorder">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".RecorderApp"
         android:allowBackup="false"

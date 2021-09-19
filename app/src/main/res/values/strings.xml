@@ -23,5 +23,5 @@
     <string name="common_view">The_common_view</string>
     <string name="records">Records</string>
     <string name="tonometer">Tonometer</string>
-    <string name="description">Developing this app,</string>
+    <string name="description">Developing this app, developer was seeing this tonometer:</string>
 </resources>

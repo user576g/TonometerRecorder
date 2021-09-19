@@ -7,6 +7,7 @@
 1) RecyclerView with two view types
 2) Night mode support
 3) Transition animation
+4) Picasso for image loading 
 
 Приложение хранит данные на устройстве при помощи Андроид библиотеки Rooom.
 
