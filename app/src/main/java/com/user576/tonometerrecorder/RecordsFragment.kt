@@ -51,7 +51,6 @@ class RecordsFragment : Fragment() {
         }
     }
 
-
     private fun onAddRecordBtnClick() {
 
         val intent = Intent(activity, AddRecordActivity::class.java)

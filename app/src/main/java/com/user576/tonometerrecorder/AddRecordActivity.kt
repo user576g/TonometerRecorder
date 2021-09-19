@@ -5,7 +5,10 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.user576.tonometerrecorder.databinding.AddLayoutBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class AddRecordActivity : AppCompatActivity() {
 
     private lateinit var binding : AddLayoutBinding
@@ -18,7 +21,8 @@ class AddRecordActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    private val saver = SaveRecordUseCase()
+    @Inject
+    lateinit var saver : SaveRecordUseCase
 
     fun onBtnClick(view : View) {
 

@@ -1,17 +1,18 @@
 package com.user576.tonometerrecorder
 
 import android.app.Application
+import android.content.Context
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class RecorderApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
-        val db = RecordsDB.getDatabase(applicationContext)
-        dao = db.recordDao()
+        appContext = applicationContext
     }
 
     companion object {
-        var dao : RecordDao? = null
+        var appContext : Context? = null
     }
 }
