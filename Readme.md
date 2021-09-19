@@ -51,5 +51,5 @@ minSdkVersion - 23
 
 # TODOs
 
-1) DrawerLayout
+1) DrawerLayout item in toolbar
 2) Add day night mode switcher

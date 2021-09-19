@@ -21,4 +21,7 @@
 
     <string name="message">Нет ни одной записи.\n Добавьте новую запись!</string>
     <string name="common_view">The_common_view</string>
+    <string name="records">Records</string>
+    <string name="tonometer">Tonometer</string>
+    <string name="description">Developing this app,</string>
 </resources>
