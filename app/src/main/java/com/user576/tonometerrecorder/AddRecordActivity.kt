@@ -1,6 +1,7 @@
 package com.user576.tonometerrecorder
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -15,10 +16,10 @@ class AddRecordActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = AddLayoutBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     @Inject
@@ -47,4 +48,12 @@ class AddRecordActivity : AppCompatActivity() {
                 .show()
         }
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean =
+        if (item.itemId == android.R.id.home) {
+            finish()
+            true
+        } else {
+            super.onOptionsItemSelected(item)
+        }
 }

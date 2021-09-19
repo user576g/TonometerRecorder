@@ -24,4 +24,7 @@
     <string name="records">Records</string>
     <string name="tonometer">Tonometer</string>
     <string name="description">Developing this app, developer was seeing this tonometer:</string>
+
+    <string name="open_drawer">open drawer</string>
+    <string name="close_drawer">close drawer</string>
 </resources>

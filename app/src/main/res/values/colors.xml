@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="odd_row_back_color">#ebebe0</color>
+    <color name="toolbarForegroundColor">@color/white</color>
+    <color name="toolBarBackGround">?attr/colorPrimary</color>
 </resources>
